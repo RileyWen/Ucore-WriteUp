@@ -27,7 +27,7 @@ struct vma_struct {
 };
 ```
 
-![1558278039496](C:\Users\riley\OneDrive\Courses\Operating System\Ucore-Lab\Ucore-Lab-3.assets\1558278039496.png)
+![1558278039496](Ucore-Lab-3.assets\1558278039496.png)
 
 当在用户级进程中申请新的内存区域时，实际上只建立了相应的`vma_struct`，而并没有实际分配具体的物理页框。物理页框是当用户进程访问了已经申请的合法虚拟地址区间中的地址（由`vma_struct`记录）时，此时因为该地址对应PTE中的`Present Bit = 0`，触发CPU的缺页中断，此时在中断处理进程中以中断栈帧、`cr2`寄存器中引起中断的线性地址作为参数，调用`do_pgfault`，在其中完成对于引发缺页中断的3种情况的处理：
 
@@ -111,7 +111,7 @@ failed:
 
 ##### 请描述页目录项（Page Directory Entry）和页表项（Page Table Entry）中组成部分对ucore实现页替换算法的潜在用处。
 
-![1558328587071](C:\Users\riley\OneDrive\Courses\Operating System\Ucore-Lab\Ucore-Lab-3.assets\1558328587071.png)
+![1558328587071](Ucore-Lab-3.assets\1558328587071.png)
 
 可以看到其中有一些位如`Dirty`、`Acessed`就是实现Clock PRA或Enhanced Clock PRA所必须的。
 

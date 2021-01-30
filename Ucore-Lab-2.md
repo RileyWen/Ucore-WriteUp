@@ -147,7 +147,7 @@ __boot_pt1:
 
 下图是页表有关信息的结构。
 
-![1557674578108](Ucore-Lab-2.assets\1557674578108.png)
+![1557674578108](Ucore-Lab-2.assets/1557674578108.png)
 
 结合上图，可以看到这一段代码在进入`kern_init`之前，先设置了临时页表，将原来`Virtual Address = Linear Address = Physical Address`的映射关系更改为如下的临时映射：
 
@@ -590,13 +590,13 @@ get_pte(pde_t *pgdir, uintptr_t la, bool create) {
 
 ##### 请描述页目录项（Page Directory Entry）和页表项（Page Table Entry）中每个组成部分的含义以及对ucore而言的潜在用处。
 
-![1557674578108](Ucore-Lab-2.assets\1557674578108.png)
+![1557674578108](Ucore-Lab-2.assets/1557674578108.png)
 
 还是这张图再贴一遍，Ucore中使用到的几个位就是`Bit 0`、`Bit 1`、`Bit 2`。对于PTE和PDE的详细注解如下，这在*Intel® 64 and IA-32 Architectures Software Developer Manuals*中可以找到。
 
 ![1557837958893](Ucore-Lab-2.assets\1557837958893.png)
 
-![1557838126280](Ucore-Lab-2.assets\1557838126280.png)
+![1557838126280](Ucore-Lab-2.assets/1557838126280.png)
 
 潜在用处？我看不出来。。。
 

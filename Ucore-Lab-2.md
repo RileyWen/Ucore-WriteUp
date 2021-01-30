@@ -594,7 +594,7 @@ get_pte(pde_t *pgdir, uintptr_t la, bool create) {
 
 还是这张图再贴一遍，Ucore中使用到的几个位就是`Bit 0`、`Bit 1`、`Bit 2`。对于PTE和PDE的详细注解如下，这在*Intel® 64 and IA-32 Architectures Software Developer Manuals*中可以找到。
 
-![1557837958893](Ucore-Lab-2.assets\1557837958893.png)
+![1557837958893](Ucore-Lab-2.assets/1557837958893.png)
 
 ![1557838126280](Ucore-Lab-2.assets/1557838126280.png)
 
